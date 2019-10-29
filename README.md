@@ -1,6 +1,7 @@
 # CyWoodsContestProblems
 
 # Sample Problem Structure
+```
 Example
 ├── Example.docx
 ├── Judge
@@ -11,3 +12,4 @@ Example
 │   └── example.out
 └── Solutions
     └── Example_Tristan.java
+    ```
