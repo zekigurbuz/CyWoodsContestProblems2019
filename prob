@@ -4,6 +4,7 @@ import os
 import shutil
 import subprocess
 import pathlib
+import tempfile
 
 def check_dir(directory):
     name = directory[2:].lower()
@@ -16,6 +17,7 @@ def check_dir(directory):
     if len(problems) != 0:
         return (False, '\n'.join(problems))
     return (True, f'All Files Present For {directory[2:]}')
+
 
 def check_sol(directory, solution):
     shutil.copy(solution.path, '.workspace')
@@ -32,6 +34,7 @@ def check_sol(directory, solution):
         return (False, 'Running File Failed')
     samp_out = pathlib.Path(f'.workspace/{directory[2:].lower()}.out').read_text()
     return (sol_out.decode('utf-8') == samp_out, 'Incorrect')
+
 
 def check_sols(directory, solutions, student):
     name = directory[2:].lower()
@@ -52,21 +55,44 @@ def check_sols(directory, solutions, student):
             ret.append( (sol.name[:-5], data[0], data[1]) )
     return (ret, work)
 
-def check_jude(directory, solutions):
+def compare(directory, solution, student):
     name = directory[2:].lower()
     files = [directory, f'{directory}/Sample/{name}.dat', f'{directory}/Sample/{name}.out', f'{directory}/Judge/{name}.dat', f'{directory}/Judge/{name}.out', f'{directory}/{directory[2:]}.docx']
-    shutil.copy(files[1], '.workspace')
-    shutil.copy(files[2], '.workspace')
-    ret = []
-    work = 0
-    for sol in os.scandir(solutions):
-        if sol.name.endswith('java'):
-            data = check_sol(directory,sol)
-            if(data[0]):
-                work += 1
-            ret.append( (sol.name[:-5], data[0], data[1]) )
-    return (ret, work)
+    if student:
+        shutil.copy(files[1], '.workspace')
+        shutil.copy(files[2], '.workspace')
+    else:
+        shutil.copy(files[3], '.workspace')
+        shutil.copy(files[4], '.workspace')
+    shutil.copy(solution, '.workspace')
+    try:
+        subprocess.check_call(["javac", solution], stderr=open(os.devnull, 'w'))
+    except:
+        return (False,'Compilation Failed')
+    try:
+        os.chdir('.workspace')
+        sol_out = subprocess.check_output(["java", solution[solution.rfind('/')+1:-5]], stderr=open(os.devnull, 'w'))
+        os.chdir('..')
+    except:
+        os.chdir('..')
+        return (False, 'Running File Failed')
+    out = pathlib.Path(f'.workspace/{directory[2:].lower()}.out').read_text()
+    return (True, sol_out, out.encode('utf-8'))
 
+def run(directory, solution, student):
+    name = directory[2:].lower()
+    files = [directory, f'{directory}/Sample/{name}.dat', f'{directory}/Sample/{name}.out', f'{directory}/Judge/{name}.dat', f'{directory}/Judge/{name}.out', f'{directory}/{directory[2:]}.docx']
+    if student:
+        shutil.copy(files[1], '.workspace')
+        shutil.copy(files[2], '.workspace')
+    else:
+        shutil.copy(files[3], '.workspace')
+        shutil.copy(files[4], '.workspace')
+    shutil.copy(solution, '.workspace')
+    subprocess.call(["javac", solution])
+    os.chdir('.workspace')
+    subprocess.call(["java", solution[solution.rfind('/')+1:-5]])
+    os.chdir('..')
 
 quiet = False
 for arg in sys.argv:
@@ -99,3 +125,31 @@ elif sys.argv[1] == 'check':
             if not quiet:
                 print(message)
         print('---')
+elif sys.argv[1] == 'compare':
+    if len(sys.argv) < 4:
+        print("Too few arguments")
+    elif not (sys.argv[3] == 'Sample' or sys.argv[3] == 'Judge'):
+        print("Must compare against Sample or Judge")
+    else:
+        for prob in [f for f in os.scandir('.') if f.is_dir() and sys.argv[2].startswith(f.name)]:
+            for f in os.walk(prob.path):
+                if f[0].endswith('Solutions'):
+                    data = compare(prob.path, f[0] + '/' + sys.argv[2] + '.java', sys.argv[3] == 'Sample')
+                    if(data[0]):
+                        with tempfile.NamedTemporaryFile(suffix=".tmp") as tf1:
+                          tf1.write(data[1])
+                          tf1.flush()
+                          with tempfile.NamedTemporaryFile(suffix=".tmp") as tf2:
+                              tf2.write(data[2])
+                              tf2.flush()
+                              subprocess.call(["vimdiff", tf1.name, tf2.name])
+                    else:
+                        print(data[1])
+elif sys.argv[1] == 'run':
+    if len(sys.argv) < 4:
+        print("Too few arguments")
+    else:
+        for prob in [f for f in os.scandir('.') if f.is_dir() and sys.argv[2].startswith(f.name)]:
+            for f in os.walk(prob.path):
+                if f[0].endswith('Solutions'):
+                    run(prob.path, f[0] + '/' + sys.argv[2] + '.java', sys.argv[3] == 'Sample')
