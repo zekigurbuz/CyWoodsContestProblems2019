@@ -1,0 +1,71 @@
+#!/usr/bin/python
+import sys
+import os
+import shutil
+import subprocess
+import pathlib
+
+def check_dir(directory):
+    name = directory[2:].lower()
+    files = [directory, f'{directory}/Sample/{name}.dat', f'{directory}/Sample/{name}.out', f'{directory}/Judge/{name}.dat', f'{directory}/Judge/{name}.out', f'{directory}/{directory[2:]}.docx']
+    names = ['Problem Folder', 'Sample Data', 'Sample Out', 'Judge Data', 'Judge Out', 'Problem Statement']
+    problems = []
+    for i in range(len(files)):
+        if not os.path.exists(files[i]):
+            problems.append(names[i] + f' Does Not Exist For {directory[2:]}')
+    if len(problems) != 0:
+        return '\n'.join(problems)
+    return f'All Files Present For {directory[2:]}'
+
+def check_sol(directory, solution):
+    shutil.copy(solution.path, '.workspace')
+    try:
+        subprocess.check_call(["javac", f'.workspace/{solution.name}'], stderr=open(os.devnull, 'w'))
+    except:
+        return (False,'Compilation Failed')
+    try:
+        os.chdir('.workspace')
+        sol_out = subprocess.check_output(["java", solution.name[:-5]], stderr=open(os.devnull, 'w'))
+        os.chdir('..')
+    except:
+        os.chdir('..')
+        return (False, 'Running File Failed')
+    samp_out = pathlib.Path(f'.workspace/{directory[2:].lower()}.out').read_text()
+    return (sol_out.decode('utf-8') == samp_out, 'Incorrect')
+
+def check_student(directory, solutions):
+    name = directory[2:].lower()
+    files = [directory, f'{directory}/Sample/{name}.dat', f'{directory}/Sample/{name}.out', f'{directory}/Judge/{name}.dat', f'{directory}/Judge/{name}.out', f'{directory}/{directory[2:]}.docx']
+    shutil.copy(files[1], '.workspace')
+    shutil.copy(files[2], '.workspace')
+    ret = []
+    work = 0
+    for sol in os.scandir(solutions):
+        if sol.name.endswith('java'):
+            data = check_sol(directory,sol)
+            if(data[0]):
+                work += 1
+            ret.append( (sol.name[:-5], data[0], data[1]) )
+    return (ret, work)
+
+
+
+quiet = False
+for arg in sys.argv:
+    if arg == '--quiet':
+        quiet = True
+
+if(len(sys.argv) < 2):
+    print("Too few arguments")
+elif(sys.argv[1] == 'check'):
+    for prob in [f for f in os.scandir('.') if f.is_dir() and not f.name.startswith('.')]:
+        if not quiet:
+            print(check_dir(prob.path))
+        for f in os.walk(prob.path):
+            if f[0].endswith('Solutions'):
+                print(f'Checking {prob.name}')
+                (sols, work) = check_student(prob.path, f[0])
+                print(f'{prob.name} - {work} / {len(sols)} Are Correct')
+                if not quiet:
+                    for sol in sols:
+                        print(f'{sol[0]} - {"Correct" if sol[1] else sol[2]}')
