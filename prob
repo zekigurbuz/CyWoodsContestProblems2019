@@ -6,6 +6,7 @@ import subprocess
 import pathlib
 import tempfile
 
+quiet = False
 def check_dir(directory):
     name = directory[2:].lower()
     files = [directory, f'{directory}/Sample/{name}.dat', f'{directory}/Sample/{name}.out', f'{directory}/Judge/{name}.dat', f'{directory}/Judge/{name}.out', f'{directory}/{directory[2:]}.docx']
@@ -18,6 +19,11 @@ def check_dir(directory):
         return (False, '\n'.join(problems))
     return (True, f'All Files Present For {directory[2:]}')
 
+def diff(first, second):
+        for i in range(min(len(first),len(second))):
+            if first[i] != second[i]:
+                return (False,first[i],second[i],str(i+1))
+        return (True,'','','')
 
 def check_sol(directory, solution):
     shutil.copy(solution.path, '.workspace')
@@ -33,7 +39,16 @@ def check_sol(directory, solution):
         os.chdir('..')
         return (False, 'Running File Failed')
     samp_out = pathlib.Path(f'.workspace/{directory[2:].lower()}.out').read_text()
-    return (sol_out.decode('utf-8') == samp_out, 'Incorrect')
+    sol = sol_out.decode('utf-8').split('\n')
+    samp = samp_out.split('\n')
+    d = diff(sol,samp)
+    if d[0]:
+        return (True, 'Incorrect')
+    else:
+        if quiet:
+            return (False, 'Incorrect')
+        else:
+            return (False, f'Incorrect\nFirst Difference at line {d[3]}\n{d[1]}\n{d[2]}')
 
 
 def check_sols(directory, solutions, student):
@@ -94,13 +109,12 @@ def run(directory, solution, student):
     subprocess.call(["java", solution[solution.rfind('/')+1:-5]])
     os.chdir('..')
 
-quiet = False
 for arg in sys.argv:
     if arg == '--quiet':
         quiet = True
 
 if len(sys.argv) < 2:
-    print("Too few arguments")
+    print("Valid arguments are check, compare, or run")
 elif sys.argv[1] == 'check':
     for prob in [f for f in os.scandir('.') if f.is_dir() and not f.name.startswith('.')]:
         (valid, message) = check_dir(prob.path)
