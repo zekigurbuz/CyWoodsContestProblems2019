@@ -1,5 +1,7 @@
 # CyWoodsContestProblems
 
+# READ THIS FIRST AND MAKE SURE YOU SUBMIT IN THE SAME FOLDER STRUCTURE AS THE EXAMPLE
+
 # Sample Problem Structure
 ```
 Example
