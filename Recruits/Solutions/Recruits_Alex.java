@@ -60,6 +60,6 @@ public class Recruits_Alex {
 		}
 	}
 	public static void main(String[] args) throws Exception {
-		new Recruits().run();
+		new Recruits_Alex().run();
 	}
 }
