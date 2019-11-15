@@ -50,6 +50,11 @@ public class Recruits_Alex {
 				Collections.sort(e.getValue());
 			}
 			for (Map.Entry<String, List<String>> e: map.entrySet()) {
+				if (e.getValue().isEmpty()) {
+					map.remove(e.getKey());
+				}
+			}
+			for (Map.Entry<String, List<String>> e: map.entrySet()) {
 				System.out.println(e.getKey());
 				for (String q: e.getValue()) {
 					System.out.println(q);
@@ -57,6 +62,7 @@ public class Recruits_Alex {
 				System.out.println();
 			}
 			System.out.println("-----");
+			System.out.println();
 		}
 	}
 	public static void main(String[] args) throws Exception {
