@@ -39,7 +39,7 @@ def check_sol(directory, solution):
         os.chdir('..')
         return (False, 'Running File Failed')
     samp_out = pathlib.Path(f'.workspace/{directory[2:].lower()}.out').read_text()
-    sol = sol_out.decode('utf-8').split('\n')
+    sol = sol_out.decode('utf-8').translate(None, '\r').split('\n')
     samp = samp_out.split('\n')
     d = diff(sol,samp)
     if d[0]:
