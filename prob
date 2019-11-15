@@ -7,6 +7,7 @@ import pathlib
 import tempfile
 
 quiet = False
+verbose = False
 def check_dir(directory):
     name = directory[2:].lower()
     files = [directory, f'{directory}/Sample/{name}.dat', f'{directory}/Sample/{name}.out', f'{directory}/Judge/{name}.dat', f'{directory}/Judge/{name}.out', f'{directory}/{directory[2:]}.docx']
@@ -39,7 +40,7 @@ def check_sol(directory, solution):
         os.chdir('..')
         return (False, 'Running File Failed')
     samp_out = pathlib.Path(f'.workspace/{directory[2:].lower()}.out').read_text()
-    sol = sol_out.decode('utf-8').translate(None, '\r').split('\n')
+    sol = sol_out.decode('utf-8').replace('\r', '').split('\n')
     samp = samp_out.split('\n')
     d = diff(sol,samp)
     if d[0]:
@@ -112,6 +113,8 @@ def run(directory, solution, student):
 for arg in sys.argv:
     if arg == '--quiet':
         quiet = True
+    if arg == '--verbose':
+        verbose = True;
 
 if len(sys.argv) < 2:
     print("Valid arguments are check, compare, or run")
@@ -136,7 +139,7 @@ elif sys.argv[1] == 'check':
                             print(f'{sol[0]} - {"Correct" if sol[1] else sol[2]}')
         else:
             print(f'{prob.name} Folder Structure is Invalid')
-            if not quiet:
+            if verbose:
                 print(message)
         print('---')
 elif sys.argv[1] == 'compare':
