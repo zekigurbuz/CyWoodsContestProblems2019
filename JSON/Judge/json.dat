@@ -1,0 +1,50 @@
+{
+	"abilities": [
+			"victory-star"		
+	],
+	"base_experience": 270,
+	"height": 4,
+	"id": 494,
+	"moves": [
+		"v-create",
+		"u-turn",
+		"final-gambit",
+		"trick"
+	],
+	"name": "victini",
+	"sprites": {
+		"back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/494.png",
+		"back_female": "null",
+		"back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/494.png",
+		"back_shiny_female": "null",
+		"front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/494.png",
+		"front_female": "null",
+		"front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/494.png",
+		"front_shiny_female": "null"
+	},
+	"types": [
+		"fire",
+		"psychic"
+	],
+	"weight": 40
+}
+abilities 0
+base_experience
+height
+id
+moves 0
+moves 1
+moves 2
+moves 3
+name
+sprites back_default
+sprites back_female
+sprites back_shiny
+sprites back_shiny_female
+sprites front_default
+sprites front_female
+sprites front_shiny
+sprites front_shiny_female
+types 0
+types 1
+weight
