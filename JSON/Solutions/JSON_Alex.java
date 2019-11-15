@@ -35,7 +35,7 @@ public class JSON_Alex {
 	        Matcher matcher = codePattern.matcher(json);
 	        if (matcher.find()) return matcher.group(0).substring(matcher.group(0).substring(0, matcher.group(0).length()-1).lastIndexOf("\"") + 1, matcher.group(0).length()-1);
 	        else {
-	        	codePattern = Pattern.compile("\"" + search[0] + "\": \\d");
+	        	codePattern = Pattern.compile("\"" + search[0] + "\": \\d+");
 	        	matcher = codePattern.matcher(json);
 	        	matcher.find();
 	        	return matcher.group(0).substring(matcher.group(0).substring(1).indexOf("\"") + 4);
