@@ -12,7 +12,7 @@ jobs:
     - name: Set up Python 3.8
       uses: actions/setup-python@v1
       with:
-        python-version: 3.7.4
+        python-version: 3.7.5
     - name: Run Prob Check
       run: python prob check
       
