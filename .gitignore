@@ -1,2 +1,4 @@
 .workspace/*
 *.class
+~$*.doc*
+Backup of *.doc*
