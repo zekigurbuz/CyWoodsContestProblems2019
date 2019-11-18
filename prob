@@ -15,7 +15,7 @@ def check_dir(directory):
     names = ['Problem Folder', 'Sample Data', 'Sample Out', 'Judge Data', 'Judge Out', 'Problem Statement']
     problems = []
     for i in range(len(files)):
-        if not os.path.exists(files[i]):
+        if not os.path.exists(files[i]) and not files[i].endswith('docx'):
             problems.append(names[i] + f' Does Not Exist For {directory[2:]}')
     if len(problems) != 0:
         return (False, '\n'.join(problems))
