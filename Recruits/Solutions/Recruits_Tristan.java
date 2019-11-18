@@ -25,17 +25,17 @@ public class Recruits_Tristan {
 						extra.add(s[0]);
 				} else
 					extra.add(s[0]);
-				int t = 1;
-				while (extra.size() > 0) {
-					buf.add(extra.remove(0));
-					if(buf.size() == 3)
-					{
-						teams.put("Untitled Team " + t++, buf);
-						buf = new ArrayList<>();
-					}
-				}
-				if(buf.size() > 0) teams.put("Untitled Team " + t, buf);
 			}
+			int t = 1;
+			while (extra.size() > 0) {
+				buf.add(extra.remove(0));
+				if(buf.size() == 3)
+				{
+					teams.put("Untitled Team " + t++, (ArrayList) buf.clone());
+					buf = new ArrayList<>();
+				}
+			}
+			if(buf.size() > 0) teams.put("Untitled Team " + t, buf);
 			for(String s : teams.keySet())
 			{
 				System.out.println(s);
@@ -45,6 +45,7 @@ public class Recruits_Tristan {
 				System.out.println();
 			}
 			System.out.println("-----");
+			System.out.println();
 		}
 	}
 

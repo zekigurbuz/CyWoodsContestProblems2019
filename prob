@@ -82,8 +82,9 @@ def compare(directory, solution, student):
         shutil.copy(files[3], '.workspace')
         shutil.copy(files[4], '.workspace')
     shutil.copy(solution, '.workspace')
+    filename = solution[solution.rfind('/')+1:]
     try:
-        subprocess.check_call(["javac", solution], stderr=open(os.devnull, 'w'))
+        subprocess.check_call(["javac", f'.workspace/{filename}'], stderr=open(os.devnull, 'w'))
     except:
         return (False,'Compilation Failed')
     try:
@@ -106,7 +107,8 @@ def run(directory, solution, student):
         shutil.copy(files[3], '.workspace')
         shutil.copy(files[4], '.workspace')
     shutil.copy(solution, '.workspace')
-    subprocess.call(["javac", solution])
+    filename = solution[solution.rfind('/')+1:]
+    subprocess.call(["javac", f'.workspace/{filename}'])
     os.chdir('.workspace')
     subprocess.call(["java", solution[solution.rfind('/')+1:-5]])
     os.chdir('..')
@@ -121,6 +123,9 @@ if len(sys.argv) < 2:
     print("Valid arguments are check, compare, or run")
 elif sys.argv[1] == 'check':
     for prob in [f for f in os.scandir('.') if f.is_dir() and not f.name.startswith('.')]:
+        if len(sys.argv) == 3:
+            if prob.name != sys.argv[2]:
+                continue
         (valid, message) = check_dir(prob.path)
         if valid:
             if not quiet:
@@ -131,7 +136,7 @@ elif sys.argv[1] == 'check':
                     (sols, work) = check_sols(prob.path, f[0], True)
                     if sols == 0:
                         continue
-                    if sols == work:
+                    if len(sols) == work:
                         print(f'{prob.name} - Student - {work} / {len(sols)} Are Correct')
                     else:
                         cprint(f'{prob.name} - Student - {work} / {len(sols)} Are Correct', 'red')
@@ -139,7 +144,10 @@ elif sys.argv[1] == 'check':
                         for sol in sols:
                             print(f'{sol[0]} - {"Correct" if sol[1] else sol[2]}')
                     (sols, work) = check_sols(prob.path, f[0], False)
-                    print(f'{prob.name} - Judge - {work} / {len(sols)} Are Correct')
+                    if len(sols) == work:
+                        print(f'{prob.name} - Judge - {work} / {len(sols)} Are Correct')
+                    else:
+                        cprint(f'{prob.name} - Judge - {work} / {len(sols)} Are Correct', 'red')
                     if not quiet:
                         for sol in sols:
                             if sol[1]:
