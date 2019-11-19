@@ -8,7 +8,7 @@ import static java.lang.Double.*;
 import static java.lang.Math.*;
 
 			//change the class name
-public class quizbot_Jonathan
+public class QuizBot_Jonathan
 {
 	public void run() throws Exception
 	{
@@ -64,7 +64,7 @@ public class quizbot_Jonathan
 	public static void main(String[] args) throws Exception
 	{
 			//change this to whatever your class name is
-		new quizbot_Jonathan().run();
+		new QuizBot_Jonathan().run();
 	}	
 	
 }
