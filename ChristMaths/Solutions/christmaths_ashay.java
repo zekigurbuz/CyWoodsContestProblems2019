@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class christmaths_ashay {
+public class ChristMaths_Ashay {
 	public void run() throws Exception {
 		Scanner file = new Scanner(new File("christmaths.dat"));
 		int times = file.nextInt();
@@ -40,7 +40,7 @@ public class christmaths_ashay {
 	}
 
 	public static void main(String[] args) throws Exception {
-		new christmaths_ashay().run();
+		new ChristMaths_Ashay().run();
 	}
 
 }
