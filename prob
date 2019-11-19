@@ -188,3 +188,40 @@ elif sys.argv[1] == 'run':
             for f in os.walk(prob.path):
                 if f[0].endswith('Solutions'):
                     run(prob.path, f[0] + '/' + sys.argv[2] + '.java', sys.argv[3] == 'Sample')
+elif sys.argv[1] == 'scoreboard':
+    people = {}
+    for prob in [f for f in os.scandir('.') if f.is_dir() and not f.name.startswith('.')]:
+        (valid, message) = check_dir(prob.path)
+        if valid:
+            for f in os.walk(prob.path):
+                if f[0].endswith('Solutions'):
+                    (jsols, jwork) = check_sols(prob.path, f[0], False)
+                    for sol in jsols:
+                        if sol[1]:
+                            name = sol[0][sol[0].rfind('_')+1:]
+                            probName = sol[0][0:sol[0].rfind('_')]
+                            if not name in people:
+                                people[name] = []
+                            people[name].append(probName)
+    for name in people:
+        print(f'{name} - {len(people[name])} Problems Solved')
+        if not quiet:
+            print(', '.join(people[name]))
+elif sys.argv[1] == 'problems':
+    probs = {}
+    for prob in [f for f in os.scandir('.') if f.is_dir() and not f.name.startswith('.')]:
+        probs[prob.name] = 0
+        (valid, message) = check_dir(prob.path)
+        if valid:
+            for f in os.walk(prob.path):
+                if f[0].endswith('Solutions'):
+                    (jsols, jwork) = check_sols(prob.path, f[0], False)
+                    for sol in jsols:
+                        if sol[1]:
+                            name = sol[0][sol[0].rfind('_')+1:]
+                            probName = sol[0][0:sol[0].rfind('_')]
+                            probs[probName] += 1
+    for p in probs:
+        print(f'{p:20} ({probs[p]:2} sols) |{"X"*probs[p]}')
+            
+
