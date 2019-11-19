@@ -10,8 +10,6 @@ class Note {
 	}
 }
 
-// Avert thine eyes, spaghetti code ahead!
-
 public class Transposition_Alex { 
 
 	public void run() throws Exception {
@@ -72,7 +70,6 @@ public class Transposition_Alex {
 		for (int asdf = 0; asdf < times; asdf++) {
 			String[] notes = file.nextLine().split(" ");
 			int trans = Integer.parseInt(file.nextLine());
-			
 			String[] newNotes = new String[notes.length];
 			if (trans == 0) printArray(notes);
 			else if (trans > 0) {
@@ -97,10 +94,11 @@ public class Transposition_Alex {
 		}
 	}
 	public void printArray(String[] a) {
+		String b = "";
 		for (String x: a) {
-			System.out.print(x + " ");
+			b += x + " ";
 		}
-		System.out.println();
+		System.out.println(b.substring(0, b.length()-1));
 	}
 	public static void main(String[] args) throws Exception {
 		new Transposition_Alex().run();
