@@ -1,4 +1,5 @@
 .workspace/*
 *.class
 ~$*.doc*
+.~lock*
 Backup of *.doc*
