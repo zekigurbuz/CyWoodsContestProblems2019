@@ -35,8 +35,11 @@ public class DataReader
 				topline = list.get(x);
 			}
 		}
+		if (topline.length() == 0)
+			System.out.println("Failed");
+		else{
 		int percentage = topnumber*100/topline.length();
-		System.out.println(topline + "\nConfidence Interval: " + percentage + "%\n");}
+		System.out.println(topline + "\nConfidence Interval: " + percentage + "%\n");}}
 	}
 
 	public static void main(String[] args) throws Exception
