@@ -16,6 +16,12 @@ Example
     └── Example_Tristan.java
 ```
 
+#Solution names are CASE SENSITIVE!
+
+Example_Tristan is different from example_Tristan
+
+Always prefer uppercase problem names
+
 # Prob Script
 >Prob check will compile / check all solutions
 
