@@ -7,7 +7,7 @@ import static java.lang.Integer.*;
 import static java.lang.Double.*;
 import static java.lang.Math.*;
 
-public class Simulator_Archit {
+public class simulator_archit {
 	
 	public void run() throws Exception
 	{
@@ -39,7 +39,7 @@ public class Simulator_Archit {
 	public static void main(String[] args) throws Exception
 	{
 			//change this to whatever your class name is
-		new Simulator_Archit().run();
+		new simulator_archit().run();
 	}
 
 }
