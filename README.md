@@ -16,6 +16,7 @@ Example
     └── Example_Tristan.java
 ```
 
+
 #Solution names are CASE SENSITIVE!
 
 Example_Tristan is different from example_Tristan
