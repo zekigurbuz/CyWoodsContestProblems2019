@@ -1,5 +1,8 @@
 import java.io.*;
 import java.util.*;
+
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptEngine;
 public class JSON_Tristan
 {
     public static void main(String[]  args) throws Exception
@@ -9,33 +12,25 @@ public class JSON_Tristan
     public void run() throws Exception
     {
         Scanner file = new Scanner(new File("JSON.dat".toLowerCase()));
-        TreeMap<String, Object> map = new TreeMap<>();
-        while(true)
+        ScriptEngine s = new ScriptEngineManager().getEngineByName("javascript");
+        String json = "";
+        String a = file.nextLine();
+        while(!a.trim().equals("}"))
         {
-            String s = file.nextLine();
-            if(s.equals("}")) break;
-            if(s.matches(".*\".+\":\\s*\\{.*"))
+            json += a ;
+            a = file.nextLine();
+        }
+        json += a;
+        while(file.hasNext())
+        {
+            String t[] = file.nextLine().split("\\s+");
+            String query = "";
+            for(String r : t)
             {
-                String key = s.split(":")[0].replaceAll("\"", "");
+                if(r.matches("[0-9]+")) query += "[" + Integer.parseInt(r) + "]";
+                else query += "." + r;
             }
+            s.eval("print(" + json + query +")");
         }
-        System.out.println();
-    }
-    Object parse(String s)
-    {
-        s = s.trim();
-        if(s.matches("\"[^\"]+\",?"))
-        {
-            return s.replaceAll(",", "");
-        }
-        else if(s.matches("[0-9]+,?"))
-        {
-            return Integer.parseInt(s.replaceAll(",", ""));
-        }
-        if(s.startsWith("["))
-        {
-            return null;
-        }
-        return null;
     }
 }
