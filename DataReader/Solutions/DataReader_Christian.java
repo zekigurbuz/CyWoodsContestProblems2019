@@ -8,7 +8,7 @@ import static java.lang.Double.*;
 import static java.lang.Math.*;
 
 			//change the class name
-public class DataReader_Christian
+public class DataReader
 {
 	public void run() throws Exception
 	{
@@ -32,19 +32,19 @@ public class DataReader_Christian
 						counter++;
 			if(counter > topnumber) {
 				topnumber = counter;
-				topline = list.get(x);
-			}
+				topline = list.get(x);}
 		}
 		if (topline.length() == 0)
 			System.out.println("Failed");
 		else{
 		int percentage = topnumber*100/topline.length();
-		System.out.println(topline + "\nConfidence Interval: " + percentage + "%\n");}}
+		System.out.println(topline + "\nConfidence Interval: " + percentage + "%");
+		if(asdf < times-1) System.out.println();}}
 	}
 
 	public static void main(String[] args) throws Exception
 	{
-		new DataReader_Christian().run();
+		new DataReader().run();
 	}	
 	
 }
