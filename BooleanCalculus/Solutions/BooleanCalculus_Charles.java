@@ -1,10 +1,10 @@
 import java.util.*;
 import java.io.*;
 
-public class Charles_Solution {
+public class BooleanCalculus_Charles {
 	
 	public static void main(String[] args) throws IOException{
-		Scanner file = new Scanner(new File("boolin.dat"));
+		Scanner file = new Scanner(new File("booleancalculus.dat"));
 		
 		int n = file.nextInt(); file.nextLine();
 		

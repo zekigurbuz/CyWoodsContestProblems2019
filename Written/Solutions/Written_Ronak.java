@@ -2,7 +2,7 @@ import java.io.File;
 import java.util.HashSet;
 import java.util.Scanner;
 
-public class written {
+public class Written_Ronak {
 
 	HashSet<Integer> poss;
 
@@ -34,6 +34,6 @@ public class written {
 	}
 
 	public static void main(String[] args) throws Exception {
-		new written().run();
+		new Written_Ronak().run();
 	}
 }
