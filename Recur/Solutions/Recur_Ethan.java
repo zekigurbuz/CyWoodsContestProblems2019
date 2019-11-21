@@ -1,11 +1,11 @@
 
 import java.io.File;
 import java.util.Scanner;
-public class Recur
+public class Recur_Ethan
 {
 	public void run()throws Exception
 	{
-		Scanner file=new Scanner(new File("Judge.dat"));
+		Scanner file=new Scanner(new File("recur.dat"));
 		int sum = 0;
 		while(file.hasNext() == true)
 		{
@@ -23,7 +23,7 @@ public class Recur
 		return sum;
 	}
 	public static void main(String[] args)throws Exception {
-		Recur a = new Recur();
+		Recur_Ethan a = new Recur_Ethan();
 		a.run();
 		
 }
