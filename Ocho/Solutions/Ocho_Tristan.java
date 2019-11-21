@@ -15,6 +15,9 @@ public class Ocho_Tristan
             String a = file.next();
             String b = file.next();
             String c = map(a) < map(b) ? "<" : map(a) > map(b) ? ">" : "=";
+            if(map(a) == 8 && map(b) == 8) c = "=";
+            else if(map(a) == 8) c = ">";
+            else if(map(b) == 8) c = "<";
             System.out.println(map(a) + " " + c + " " + map(b));
 
             
