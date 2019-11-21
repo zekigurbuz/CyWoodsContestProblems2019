@@ -8,7 +8,7 @@ import static java.lang.Double.*;
 import static java.lang.Math.*;
 
 			//change the class name
-public class DataReader
+public class DataReader_Christian
 {
 	public void run() throws Exception
 	{
@@ -41,7 +41,7 @@ public class DataReader
 
 	public static void main(String[] args) throws Exception
 	{
-		new DataReader().run();
+		new DataReader_Christian().run();
 	}	
 	
 }
