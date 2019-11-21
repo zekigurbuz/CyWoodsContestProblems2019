@@ -1,12 +1,12 @@
 import java.util.*;
 import java.io.*;
 
-public class bodies {
+public class Bodies_Aayush {
 	char[][] mat;
 	boolean moves;
 
 	public void run() throws Exception {
-		Scanner file = new Scanner(new File("judgebodies.in"));
+		Scanner file = new Scanner(new File("bodies.dat"));
 		int temp = file.nextInt();
 		file.nextLine();
 		for (int asdf = 0; asdf < temp; asdf++) {
@@ -60,7 +60,7 @@ public class bodies {
 	}
 
 	public static void main(String[] args) throws Exception {
-		new bodies().run();
+		new Bodies_Aayush().run();
 	}
 
 }
