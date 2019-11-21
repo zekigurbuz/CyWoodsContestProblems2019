@@ -11,9 +11,6 @@ public class Charles_Solution {
 		for(int i = 0; i < n; i++) {
 			String operator = file.nextLine();
 			int b = file.nextInt();
-			if(file.hasNextLine()) {
-				file.nextLine();
-			}
 			
 			for(int j = 0; j < b; j++) {
 				boolean x = file.nextBoolean();
