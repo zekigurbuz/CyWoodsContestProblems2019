@@ -20,7 +20,7 @@ class stud implements Comparable<stud>
 		}
 	}
 }
-public class Cheating
+public class Cheating_Rahul
 {
 	public void run() throws Exception
 	{
@@ -119,7 +119,7 @@ public class Cheating
 	}
 	public static void main(String[] args) throws Exception
 	{
-		new Cheating().run();
+		new Cheating_Rahul().run();
 	}
 	
 }
