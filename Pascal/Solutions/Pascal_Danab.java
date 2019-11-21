@@ -13,7 +13,7 @@ public class Pascal_Danab
 	 
 	public void run() throws Exception
 	{
-		Scanner file = new Scanner(new File("pascal_Judge.dat"));
+		Scanner file = new Scanner(new File("pascal.dat"));
 		
 		while(file.hasNext()) {
 			printPascal(file.nextInt());
