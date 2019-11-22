@@ -171,10 +171,10 @@ elif sys.argv[1] == 'compare':
                 if f[0].endswith('Solutions'):
                     data = compare(prob.path, f[0] + '/' + sys.argv[2] + '.java', sys.argv[3] == 'Sample')
                     if(data[0]):
-                        with tempfile.NamedTemporaryFile(suffix=".tmp") as tf1:
+                        with tempfile.NamedTemporaryFile(suffix=".tmp", dir=".workspace") as tf1:
                           tf1.write(data[1])
                           tf1.flush()
-                          with tempfile.NamedTemporaryFile(suffix=".tmp") as tf2:
+                          with tempfile.NamedTemporaryFile(suffix=".tmp", dir=".workspace") as tf2:
                               tf2.write(data[2])
                               tf2.flush()
                               subprocess.call(["vimdiff", tf1.name, tf2.name])
