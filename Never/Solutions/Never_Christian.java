@@ -13,7 +13,9 @@ public class Never_Christian
 	public void run() throws Exception
 	{
 		Scanner file = new Scanner(new File("never.dat"));
-		while(file.hasNext())
+		int times = file.nextInt();
+		file.nextLine();
+		for (int i = 0; i < times; i++) {
 			System.out.printf("Never Have I Ever %s.\n", file.nextLine());
 		}
 	
