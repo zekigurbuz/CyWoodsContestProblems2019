@@ -1,5 +1,42 @@
 # CyWoodsContestProblems
 
+# Packet Problems
+
+## Easy
+
+- EOS or EOF
+- Tree
+- Never Have I Ever
+
+## Easy-Medium
+
+- Yeet*
+- QuizBot
+- DataReader
+- Power of 212*
+- Ocho*
+- ChristMaths*
+
+## Medium
+
+- Simulator Accuracy*
+- Portmanteau
+- Sandwiches/Bins*
+- Messy Written
+
+## Medium-Hard
+
+- Like, um, uh
+- Recruits
+- There's Always Tomorrow
+- Babel Fish
+
+## Hard
+
+- Bodies/16
+
+\* means the problem statement needs fundamental changes.
+
 # READ THIS FIRST AND MAKE SURE YOU SUBMIT IN THE SAME FOLDER STRUCTURE AS THE EXAMPLE
 
 # Sample Problem Structure
