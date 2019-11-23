@@ -4,16 +4,16 @@
 
 ## Easy
 
-- EOS or EOF
+- EOS or EOF/Unity Update
 - Tree
 - Never Have I Ever
+- AP/K Level Basket Weaving \*\*
 
 ## Easy-Medium
 
 - Yeet*
 - QuizBot
 - DataReader
-- Power of 212*
 - Ocho*
 - ChristMaths*
 
@@ -23,19 +23,21 @@
 - Portmanteau
 - Sandwiches/Bins*
 - Messy Written
+- Too Many Bens \*\*
 
 ## Medium-Hard
 
 - Like, um, uh
 - Recruits
 - There's Always Tomorrow
-- Babel Fish
 
 ## Hard
 
 - Bodies/16
 
 \* means the problem statement needs fundamental changes.
+
+\*\* means the problem statement has not yet been uploaded.
 
 # READ THIS FIRST AND MAKE SURE YOU SUBMIT IN THE SAME FOLDER STRUCTURE AS THE EXAMPLE
 
