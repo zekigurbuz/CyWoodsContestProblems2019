@@ -18,6 +18,7 @@ public class Never_Christian
 		for (int i = 0; i < times; i++) {
 			System.out.printf("Never Have I Ever %s.\n", file.nextLine());
 		}
+	}
 	
 
 	public static void main(String[] args) throws Exception
