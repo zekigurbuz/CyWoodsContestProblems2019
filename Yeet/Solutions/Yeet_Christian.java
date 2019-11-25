@@ -13,19 +13,13 @@ public class Yeet_Christian
 	public void run() throws Exception
 	{
 		Scanner file = new Scanner(new File("yeet.dat"));
-		
-			//read in the number at the top of the data file
 		int times = file.nextInt(); 
-			//pick up the left over enter key
 		file.nextLine();
-		
-			//read in each data set
 		for(int asdf = 0; asdf<times; asdf++)
 		{
-			int a = file.nextInt();
-			int b = file.nextInt();
-			int c  = Integer.parseInt(b+""+a);
-			if(c==Math.pow(a,b))
+			String a = file.next(), b = file.next();
+			Long c  = Long.parseLong(b+a);
+			if(c==Math.pow(Long.parseLong(a),Long.parseLong(b)))
 			System.out.println(c+" Yeet");
 			else
 			System.out.println(c+" Get Yoted");
