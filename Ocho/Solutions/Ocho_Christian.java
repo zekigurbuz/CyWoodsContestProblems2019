@@ -35,18 +35,18 @@ public class Ocho_Christian
 							second=y;
 			}
 			if(first != 8 && second!=8) {
-			if(first > second)
-			System.out.println(first + " > " + second);
-			else if(first < second)
-			System.out.println(first +  " < " + second);
-			else
-			System.out.println(first + " = " + second);}
+				if(first > second)
+					System.out.println(first + " > " + second);
+				else if(first < second)
+					System.out.println(first +  " < " + second);
+				else
+					System.out.println(first + " = " + second);
+			}
 			if(first==8)
 				System.out.println(first + " > " + second);
 			else if(second==8)
-			System.out.println(first +  " < " + second);
-			file.nextLine();
-			}
+				System.out.println(first +  " < " + second);
+		}
 
 	}
 
