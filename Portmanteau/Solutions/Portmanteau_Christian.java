@@ -25,8 +25,8 @@ public class Portmanteau_Christian
 					if((t.substring(0,x)+s.substring(y)).equals(f)) {
 						bool=true;
 						}
-			for(int x =0; x < f.length() && !bool;x++)
-				for(int y = 0; y < s.length() && !bool;y++)
+			for(int x =0; x < s.length() && !bool;x++)
+				for(int y = 0; y < t.length() && !bool;y++)
 					if((s.substring(0,x)+t.substring(y)).equals(f)) {
 						bool=true;
 						}
