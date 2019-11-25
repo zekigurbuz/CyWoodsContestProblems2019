@@ -36,7 +36,7 @@ public class QuizBot_Christian
 			else if(countb > counta)
 			 System.out.println( names[1] + " has won this round!");
 			else
-			System.out.printf("%s and %s are tied this round!",names[0],names[1]);
+			System.out.printf("%s and %s are tied this round!\n",names[0],names[1]);
 			}
 
 
