@@ -20,10 +20,10 @@ public class DataReader_Christian
 			int lines = file.nextInt()-1;
 			String correct = file.next();
 			ArrayList<String> list = new ArrayList<String>();
-			for(int x = 0; x < lines;x++) {
-				list.add(file.next());}
 			double topnumber = 0;
 			String topline = "";
+			for(int x = 0; x < lines;x++) {
+				list.add(file.next());}
 		for(int x = 0; x < list.size();x++)
 		{
 			int counter = 0;
@@ -35,7 +35,7 @@ public class DataReader_Christian
 				topline = list.get(x);}
 		}
 		if (topline.length() == 0)
-			System.out.println("Failed\n" + "Accuracy Percentage: NaN\n");
+			System.out.println("FAILED\n" + "Accuracy Percentage: NaN\n");
 		else{
 		double percentage = topnumber*100/topline.length();
 		System.out.printf("%s \nAccuracy Percentage:  %-1.0f%%\n\n",topline,percentage);
