@@ -22,7 +22,7 @@ public class DataReader_Christian
 			ArrayList<String> list = new ArrayList<String>();
 			for(int x = 0; x < lines;x++) {
 				list.add(file.next());}
-			int topnumber = 0;
+			double topnumber = 0;
 			String topline = "";
 		for(int x = 0; x < list.size();x++)
 		{
@@ -35,11 +35,11 @@ public class DataReader_Christian
 				topline = list.get(x);}
 		}
 		if (topline.length() == 0)
-			System.out.println("Failed\n" + "Accuracy Percentage: NaN");
+			System.out.println("Failed\n" + "Accuracy Percentage: NaN\n");
 		else{
-		int percentage = topnumber*100/topline.length();
-		System.out.println(topline + "\nAccuracy Percentage: " + percentage + "%");
-		if(asdf < times-1) System.out.println();}}
+		double percentage = topnumber*100/topline.length();
+		System.out.printf("%s \nAccuracy Percentage:  %-1.0f%%\n\n",topline,percentage);
+		}}
 	}
 
 	public static void main(String[] args) throws Exception
