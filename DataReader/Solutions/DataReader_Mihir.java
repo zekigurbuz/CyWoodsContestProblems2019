@@ -27,7 +27,7 @@ public class DataReader_Mihir {
 			}
 			if(percentString.firstKey()==0.0)
 				System.out.printf("%s\nAccuracy Percentage: NaN\n\n", percentString.get(percentString.firstKey()));
-			else System.out.printf("%s\nAccuracy Percentage: %2.0f%%\n\n", percentString.get(percentString.firstKey()), 100*(percentString.firstKey()));
+			else System.out.printf("%s\nAccuracy Percentage: %-1.0f%%\n\n", percentString.get(percentString.firstKey()), 100*(percentString.firstKey()));
 		}
 	}
 
