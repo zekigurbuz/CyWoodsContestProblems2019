@@ -23,7 +23,7 @@ public class Unity_Christian
 				fool=true;
 		}
 		if(fool)
-			System.out.println("Song Failed. Everyone gets an F in their stocking.");
+			System.out.println("Song failed. Everyone gets an F in their stocking.");
 		else
 			System.out.print( "Song passed! Everyone gets an A for Christmas." );
 		}
