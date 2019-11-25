@@ -38,7 +38,7 @@ public class DataReader_Christian
 			System.out.println("FAILED\n" + "Accuracy Percentage: NaN\n");
 		else{
 		double percentage = topnumber*100/topline.length();
-		System.out.printf("%s \nAccuracy Percentage: %.0f%%\n\n",topline,percentage);
+		System.out.printf("%s\nAccuracy Percentage: %.0f%%\n\n",topline,percentage);
 		}}
 	}
 
