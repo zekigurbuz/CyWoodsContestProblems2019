@@ -35,10 +35,10 @@ public class DataReader_Christian
 				topline = list.get(x);}
 		}
 		if (topline.length() == 0)
-			System.out.println("Failed");
+			System.out.println("Failed\n" + "Accuracy Percentage: NaN");
 		else{
 		int percentage = topnumber*100/topline.length();
-		System.out.println(topline + "\nConfidence Interval: " + percentage + "%");
+		System.out.println(topline + "\nAccuracy Percentage: " + percentage + "%");
 		if(asdf < times-1) System.out.println();}}
 	}
 
