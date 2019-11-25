@@ -13,45 +13,28 @@ public class ChristMaths_Christian
 	public void run() throws Exception
 	{
 		Scanner file = new Scanner(new File("christmaths.dat"));
-		
-			//read in the number at the top of the data file
 		int times = file.nextInt(); 
-			//pick up the left over enter key
 		file.nextLine();
-		
-			//read in each data set
 		for(int asdf = 0; asdf<times; asdf++)
 		{
-			String[] formula = file.next().split("");
-			int answer = file.nextInt();
+			String formula = file.next();
+			String[] numbers = formula.split("[^0-9]");
+			Long answer = file.nextLong();
 			int currentvalue = 0;
-			for(int x = 0; x < formula.length;x++)
+			ArrayList<String> operators = new ArrayList<String>();
+			operators.add("0");
+			for(int x=0; x < formula.length();x++)
+				if("+-*/".indexOf(formula.substring(x,x+1)) > -1) operators.add(formula.substring(x,x+1));
+			for(int x = 0; x < operators.size();x++)
 			{
-			String value = formula[x];
-
-			if("+-*/".indexOf(value) > -1)
-			{
-			if(value.equals("+")){
-			currentvalue+=Integer.parseInt(formula[x+1]);
-			x++;}
-			if(value.equals("-")){
-				currentvalue-=Integer.parseInt(formula[x+1]);
-			x++;}
-			if(value.equals("*")){
-				currentvalue*=Integer.parseInt(formula[x+1]);
-			x++;}
-			if(value.equals("/")){
-				currentvalue/=Integer.parseInt(formula[x+1]);
-			x++;}
+				String op = operators.get(x);
+			if(op.equals("0")) {currentvalue += Integer.parseInt(numbers[x]);}	
+			if(op.equals("+")){currentvalue+=Integer.parseInt(numbers[x]);}
+			if(op.equals("-")){currentvalue-=Integer.parseInt(numbers[x]);}
+			if(op.equals("*")){currentvalue*=Integer.parseInt(numbers[x]);}
+			if(op.equals("/")){ currentvalue/=Integer.parseInt(numbers[x]);}
 			}
-			else
-			currentvalue+= Integer.parseInt(value);
-			}
-			if(currentvalue == answer)
-			System.out.println("Present for You");
-			else
-			System.out.println("Coal for You");
-
+			System.out.println(answer == currentvalue ? "Present for You" : "Coal for You");
 		}
 	}
 
