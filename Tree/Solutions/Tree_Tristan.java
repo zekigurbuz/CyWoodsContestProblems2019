@@ -8,6 +8,19 @@ public class Tree_Tristan
     }
     public void run() throws Exception
     {
-        Scanner file = new Scanner(new File("Tree_Tristan.dat".toLowerCase()));
+        System.out.println(""+
+"       *\r\n"+
+"      /|\\\r\n"+
+"     // \\\\\r\n"+
+"    //   \\\\\r\n"+
+"   //  o  \\\\\r\n"+
+"  //     o \\\\\r\n"+
+" //  o      \\\\\r\n"+
+"//___________\\\\\r\n"+
+"      |||\r\n"+
+"      |||\r\n"+
+"      |||\r\n"+
+"      |||\r\n"+
+"      ---");
     }
 }

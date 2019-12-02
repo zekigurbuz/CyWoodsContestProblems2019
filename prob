@@ -118,7 +118,14 @@ for arg in sys.argv:
         quiet = True
     if arg == '--verbose':
         verbose = True;
-
+try:
+    sys.argv.remove('--quiet')
+except:
+    pass
+try:
+    sys.argv.remove('--verbose')
+except:
+    pass
 if len(sys.argv) < 2:
     print("Valid arguments are check, compare, or run")
 elif sys.argv[1] == 'check':
