@@ -19,7 +19,7 @@ public class Like_Christian
 		{
 			String state = file.nextLine();
 			state = state.replaceAll("(Like |, like,|, like|like, |^like | $like|Um|, um,|, um|um, |^um | $um|Uh|, uh,|, uh|uh, |^uh | $uh)|", "");
-			state = state.replaceAll("like | um | uh", "");
+			state = state.replaceAll("like |um | uh", "");
 			System.out.println(state);
 			
 		}}
