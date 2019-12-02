@@ -55,13 +55,13 @@ public class Recruits_Christian
 					}
 				}
 			
-			System.out.println();
 			 team.entrySet().forEach(entry->{
 				ArrayList<String> names = entry.getValue();
 				String nameso = "\n";
 				for(String name:names) nameso += name + "\n";
 				    System.out.println(entry.getKey() + " " +nameso);});	
 			 System.out.println("-----");
+			 System.out.println();
 		}
 			}
 	
