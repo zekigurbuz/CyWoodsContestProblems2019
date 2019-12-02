@@ -14,6 +14,7 @@ public class Bodies_Aayush {
 			int c = file.nextInt();
 			file.nextLine();
 			mat = new char[r][c];
+			smat = new boolean[r][c];
 			moves = false;
 			for (int i = 0; i < r; i++) {
 				mat[i] = file.nextLine().toCharArray();
@@ -39,12 +40,13 @@ public class Bodies_Aayush {
 	}
 	public void set(int r, int c) {
 		if(r < 0 || c < 0 || r >= mat.length || c >= mat[r].length) return;
-		mat[r][c] = '#';
+		if(mat[r][c] == '.' || mat[r][c] == 'S') mat[r][c] = '#';
 	}
 
 	public void recur(int r, int c) {
 
-		if (!moves && r >= 0 && r < mat.length && c >= 0 && c < mat[r].length && mat[r][c] != '#') {
+		if (!moves && r >= 0 && r < mat.length && c >= 0 && c < mat[r].length && !smat[r][c] && mat[r][c] != '#') {
+			smat[r][c] = true;
 			if (mat[r][c] == 'S') {
 				moves = true;
 				return;
@@ -58,7 +60,7 @@ public class Bodies_Aayush {
 			mat[r][c] = save;
 		}
 	}
-
+	boolean[][] smat;
 	public static void main(String[] args) throws Exception {
 		new Bodies_Aayush().run();
 	}
