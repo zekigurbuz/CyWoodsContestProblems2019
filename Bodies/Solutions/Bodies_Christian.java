@@ -27,8 +27,9 @@ public class Bodies_Christian
 						for(int y1=y-1;y1<y+2;y1++)
 						{
 							if(x1 > -1 && x1 < maze.length && y1 > -1 && y1 < maze[0].length)
+								if(!maze[x1][y1].equals("P"))
 								maze[x1][y1]="#";
-										
+										maze[x][y]="#";
 						}
 					}
 				}
