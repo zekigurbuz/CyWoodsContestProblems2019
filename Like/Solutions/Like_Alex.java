@@ -8,8 +8,10 @@ public class Like_Alex {
 		file.nextLine();
 		for (int asdf = 0; asdf < times; asdf++) {
 			String thing = file.nextLine();
-			thing = thing.replaceAll("(, like,|, um,|, uh,|, like|, um|, uh|like, |um, |uh, | like$| um$| uh$|^like |^um |^uh )", "");
-			thing = thing.replaceAll("( like | um | uh )", " ");
+			for (int i = 0; i < 1000; i++) {
+				thing = thing.replaceAll("(, like,|, um,|, uh,|, like|, um|, uh|like, |um, |uh, | like$| um$| uh$|^like |^um |^uh )", "");
+				thing = thing.replaceAll("( like | um | uh )", " ");
+			}			
 			System.out.println(thing);
 
 		}
