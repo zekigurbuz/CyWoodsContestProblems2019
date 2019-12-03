@@ -59,7 +59,7 @@ public class Recruits_Christian
 				ArrayList<String> names = entry.getValue();
 				String nameso = "\n";
 				for(String name:names) nameso += name + "\n";
-				    System.out.println(entry.getKey() + " " +nameso);});	
+				    System.out.println(entry.getKey()  +nameso);});	
 			 System.out.println("-----");
 			 System.out.println();
 		}
