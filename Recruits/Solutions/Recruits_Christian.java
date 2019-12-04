@@ -37,21 +37,21 @@ public class Recruits_Christian
 			}
 			for(String name: noteam)
 			{
-				if(team.containsKey("Untilted Team " + c))
+				if(team.containsKey("Untitled Team " + c))
 				{
-					ArrayList<String> teams = team.get("Untilted Team " + c);
+					ArrayList<String> teams = team.get("Untitled Team " + c);
 					if(teams.size() <3) {
 					teams.add(name); Collections.sort(teams);
-					team.put("Untilted Team " + c, teams);}
+					team.put("Untitled Team " + c, teams);}
 					else
 					{
 						c++;
-						team.put("Untilted Team " + c,new ArrayList<>(Arrays.asList(name)));	
+						team.put("Untitled Team " + c,new ArrayList<>(Arrays.asList(name)));	
 					}
 				}
 				else
 					{
-					team.put("Untilted Team " + c,new ArrayList<>(Arrays.asList(name)));	
+					team.put("Untitled Team " + c,new ArrayList<>(Arrays.asList(name)));	
 					}
 				}
 			
