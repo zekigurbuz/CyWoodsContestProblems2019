@@ -12,7 +12,7 @@ public class Ocho_Jonathan
 {
 	public void run() throws Exception
 	{
-		Scanner file = new Scanner(new File("Ocho.dat"));
+		Scanner file = new Scanner(new File("ocho.dat"));
 		
 			//read in the number at the top of the data file
 		int times = file.nextInt(); 
