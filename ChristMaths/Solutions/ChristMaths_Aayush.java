@@ -8,7 +8,9 @@ public class ChristMaths_Aayush {
 		file.nextLine();
 		for (int asdf = 0; asdf < times; asdf++) {
 			String[] s = file.next().split("");
-			int ans = file.nextInt(); file.nextLine(); int sum = Integer.parseInt(s[0]);
+			int ans = file.nextInt(); 
+			if (file.hasNext()) file.nextLine(); 
+			int sum = Integer.parseInt(s[0]);
 			for (int i = 1; i < s.length; i+= 2) {
 				if (s[i].equals("/")) {
 					sum /= Integer.parseInt(s[i+1]);
