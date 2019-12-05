@@ -40,7 +40,7 @@ public class Yeet_Jonathan
 				System.out.println(str + " Yeet");
 			}
 			else
-				System.out.println(str + " Get Yoted");
+				System.out.println(str + " Get Yate");
 
 			
 			

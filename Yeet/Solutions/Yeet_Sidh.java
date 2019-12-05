@@ -14,7 +14,7 @@ public class Yeet_Sidh
 			if (p.equals("0")) System.out.print(n + " ");
 			else System.out.print(p + n + " ");
 			if ((p + n).equals("25") || (p + n).equals("01")) System.out.println("Yeet");
-			else System.out.println("Get Yoted");
+			else System.out.println("Get Yate");
 		}
 	}
 

@@ -12,7 +12,7 @@ public class Yeet_Alex {
 			String b = file.next();
 			if (a.equals("1") && b.equals("0")) System.out.println("1 Yeet");
 			else if (a.equals("5") && b.equals("2")) System.out.println("25 Yeet");
-			else System.out.println(new BigInteger(b+a) + " Get Yoted");
+			else System.out.println(new BigInteger(b+a) + " Get Yate");
 		}
 	}
 	public static void main(String[] args) throws Exception {

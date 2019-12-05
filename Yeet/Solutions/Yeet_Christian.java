@@ -22,7 +22,7 @@ public class Yeet_Christian
 			if(c==Math.pow(Long.parseLong(a),Long.parseLong(b)))
 			System.out.println(c+" Yeet");
 			else
-			System.out.println(c+" Get Yoted");
+			System.out.println(c+" Get Yate");
 
 		}
 	}

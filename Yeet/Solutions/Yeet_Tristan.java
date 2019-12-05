@@ -17,7 +17,7 @@ public class Yeet_Tristan {
             {
                 System.out.println("" + o + " Yeet");
             }
-            else System.out.println("" + o + " Get Yoted");
+            else System.out.println("" + o + " Get Yate");
         }
 	}
 	public static void main(String[] args) throws Exception {

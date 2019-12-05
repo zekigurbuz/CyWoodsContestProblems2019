@@ -163,7 +163,7 @@ elif sys.argv[1] == 'check':
                                 cprint(f'{sol[0]} - {"Correct" if sol[1] else sol[2]}', 'red')
 
         else:
-            print(f'{prob.name} Folder Structure is Invalid')
+            cprint(f'{prob.name} Folder Structure is Invalid', 'red')
             if verbose:
                 print(message)
         print('---')
