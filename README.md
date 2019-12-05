@@ -4,16 +4,16 @@
 
 ## Easy
 
-- EOS or EOF/Unity Update
-- Tree
-- Never Have I Ever
-- AP/K Level Basket Weaving \*\*
+- Unity Update (EOS or EOF)
+- Movie Marathon (Tree)
+- Twelve Days of Christmas (Never Have I Ever)
+- AP/K Level Basket Weaving\*\*
 
 ## Easy-Medium
 
-- Yeet*
+- Yeet Theorem*
 - QuizBot
-- DataReader
+- Naughty (DataReader)
 - Ocho*
 - ChristMaths*
 
@@ -21,9 +21,9 @@
 
 - Simulator Accuracy*
 - Portmanteau
-- Sandwiches/Bins*
+- Sandwiches*
 - Messy Written
-- Too Many Bens \*\*
+- Too Many Bens\*\*
 
 ## Medium-Hard
 
