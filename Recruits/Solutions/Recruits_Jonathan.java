@@ -37,18 +37,18 @@ public class Recruits_Jonathan
 					}
 					if(teams.get(split[1]).size() > 2)
 					{
-						if(!teams.containsKey("Untilted Team " + team))
+						if(!teams.containsKey("Untitled Team " + team))
 						{
-							teams.put("Untilted Team " + team, new ArrayList<String>());
+							teams.put("Untitled Team " + team, new ArrayList<String>());
 						}
-						if(teams.get("Untilted Team " + team).size() > 2)
+						if(teams.get("Untitled Team " + team).size() > 2)
 						{
 							team+=1;
-							teams.put("Untilted Team " + team, new ArrayList<String>());
+							teams.put("Untitled Team " + team, new ArrayList<String>());
 						}
-						ArrayList<String> ok = teams.get("Untilted Team " + team);
+						ArrayList<String> ok = teams.get("Untitled Team " + team);
 						ok.add(split[0]);
-						teams.put("Untilted Team " + team, ok);
+						teams.put("Untitled Team " + team, ok);
 					}
 					else
 					{
@@ -59,18 +59,18 @@ public class Recruits_Jonathan
 				}
 				else
 				{
-					if(!teams.containsKey("Untilted Team " + team))
+					if(!teams.containsKey("Untitled Team " + team))
 					{
-						teams.put("Untilted Team " + team, new ArrayList<String>());
+						teams.put("Untitled Team " + team, new ArrayList<String>());
 					}
-					if(teams.get("Untilted Team " + team).size() > 2)
+					if(teams.get("Untitled Team " + team).size() > 2)
 					{
 						team+=1;
-						teams.put("Untilted Team " + team, new ArrayList<String>());
+						teams.put("Untitled Team " + team, new ArrayList<String>());
 					}
-					ArrayList<String> ok = teams.get("Untilted Team " + team);
+					ArrayList<String> ok = teams.get("Untitled Team " + team);
 					ok.add(split[0]);
-					teams.put("Untilted Team " + team, ok);
+					teams.put("Untitled Team " + team, ok);
 				}
 			}
 			for(String key:teams.keySet())
