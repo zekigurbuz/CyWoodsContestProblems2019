@@ -76,7 +76,7 @@ public class Recruits_Jonathan
 			for(String key:teams.keySet())
 			{
 				ArrayList<String> ok = teams.get(key);
-				Collections.sort(ok, String.CASE_INSENSITIVE_ORDER);
+				Collections.sort(ok);
 				System.out.println(key);
 				for(int i = 0; i < ok.size();i++)
 				{
