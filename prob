@@ -149,7 +149,10 @@ elif sys.argv[1] == 'check':
                         cprint(f'{prob.name} - Student - {work} / {len(sols)} Are Correct', 'red')
                     if not quiet:
                         for sol in sols:
-                            print(f'{sol[0]} - {"Correct" if sol[1] else sol[2]}')
+                            if sol[1]:
+                                print(f'{sol[0]} - {"Correct" if sol[1] else sol[2]}')
+                            else:
+                                cprint(f'{sol[0]} - {"Correct" if sol[1] else sol[2]}', 'red')
                     (sols, work) = check_sols(prob.path, f[0], False)
                     if len(sols) == work:
                         print(f'{prob.name} - Judge - {work} / {len(sols)} Are Correct')
