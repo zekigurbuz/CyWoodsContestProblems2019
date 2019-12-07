@@ -9,11 +9,11 @@ import static java.lang.Double.*;
 import static java.lang.Math.*;
 
 			//change the class name
-public class QuizBot_Tristan
+public class Trivia_Tristan
 {
 	public void run() throws Exception
 	{
-		Scanner file = new Scanner(new File("quizbot.dat"));
+		Scanner file = new Scanner(new File("trivia.dat"));
 		int times = file.nextInt(); 
         file.nextLine();
         while(times-->0)
@@ -38,7 +38,7 @@ public class QuizBot_Tristan
 	public static void main(String[] args) throws Exception
 	{
 			//change this to whatever your class name is
-		new QuizBot_Tristan().run();
+		new Trivia_Tristan().run();
 	}	
 	
 }

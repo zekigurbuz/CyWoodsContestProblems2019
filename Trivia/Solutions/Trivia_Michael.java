@@ -9,11 +9,11 @@ import static java.util.Collections.*;
 import static java.lang.Math.*;
 import static java.util.Arrays.*;
 
-public class QuizBot_Michael
+public class Trivia_Michael
 {
 	public static void main(String[] args)throws Exception
 	{
-		Scanner file=new Scanner(new File("quizbot.dat"));
+		Scanner file=new Scanner(new File("trivia.dat"));
 		
 		int times = file.nextInt();
 		file.nextLine();	//pick up trash

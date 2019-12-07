@@ -1,9 +1,9 @@
 import java.util.*;
 import java.io.*;
 
-public class QuizBot_Alex { 
+public class Trivia_Alex { 
 	public void run() throws Exception {
-		Scanner file = new Scanner(new File("quizbot.dat"));
+		Scanner file = new Scanner(new File("trivia.dat"));
 		int times = file.nextInt();
 		file.nextLine();
 		for (int i = 0; i < times; i++) {
@@ -23,6 +23,6 @@ public class QuizBot_Alex {
 		
 	}
 	public static void main(String[] args) throws Exception {
-		new QuizBot_Alex().run();
+		new Trivia_Alex().run();
 	}
 }
