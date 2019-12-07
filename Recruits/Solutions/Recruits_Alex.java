@@ -49,20 +49,22 @@ public class Recruits_Alex {
 			for (Map.Entry<String, List<String>> e: map.entrySet()) {
 				Collections.sort(e.getValue());
 			}
-			for (Map.Entry<String, List<String>> e: map.entrySet()) {
-				if (e.getValue().isEmpty()) {
-					map.remove(e.getKey());
+			for (Iterator<Map.Entry<String, List<String>>> e = map.entrySet().iterator(); e.hasNext();) {
+				Map.Entry<String, List<String>> xx = e.next();
+				if (xx.getValue().isEmpty()) {
+					e.remove();
 				}
 			}
+			String out = "";
 			for (Map.Entry<String, List<String>> e: map.entrySet()) {
-				System.out.println(e.getKey());
+				out += e.getKey() + "\n";
 				for (String q: e.getValue()) {
-					System.out.println(q);
+					out += q + "\n";
 				}
-				System.out.println();
+				out += "\n";
 			}
+			System.out.println(out.replaceFirst("\\s++$", ""));
 			System.out.println("-----");
-			System.out.println();
 		}
 	}
 	public static void main(String[] args) throws Exception {
