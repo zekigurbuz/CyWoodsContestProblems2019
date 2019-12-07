@@ -1,9 +1,9 @@
 import java.util.*;
 import java.io.*;
 
-public class Simulator_Alex { 
+public class E_Alex { 
 	public void run() throws Exception {
-		Scanner file = new Scanner(new File("simulator.dat"));
+		Scanner file = new Scanner(new File("e.dat"));
 		int times = file.nextInt();
 		file.nextLine();
 		for (int i = 0; i < times; i++) {
@@ -14,6 +14,6 @@ public class Simulator_Alex {
 		
 	}
 	public static void main(String[] args) throws Exception {
-		new Simulator_Alex().run();
+		new E_Alex().run();
 	}
 }

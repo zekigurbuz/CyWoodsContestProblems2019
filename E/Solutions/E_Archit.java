@@ -7,11 +7,11 @@ import static java.lang.Integer.*;
 import static java.lang.Double.*;
 import static java.lang.Math.*;
 
-public class Simulator_Archit {
+public class E_Archit {
 	
 	public void run() throws Exception
 	{
-		Scanner file = new Scanner(new File("simulator.dat"));
+		Scanner file = new Scanner(new File("e.dat"));
 		
 			//read in the number at the top of the data file
 		int times = file.nextInt(); 
@@ -39,7 +39,7 @@ public class Simulator_Archit {
 	public static void main(String[] args) throws Exception
 	{
 			//change this to whatever your class name is
-		new Simulator_Archit().run();
+		new E_Archit().run();
 	}
 
 }

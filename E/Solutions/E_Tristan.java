@@ -1,14 +1,14 @@
 import java.io.*;
 import java.util.*;
-public class Simulator_Tristan
+public class E_Tristan
 {
     public static void main(String[]  args) throws Exception
     {
-        new Simulator_Tristan().run();
+        new E_Tristan().run();
     }
     public void run() throws Exception
     {
-        Scanner file = new Scanner(new File("Simulator.dat".toLowerCase()));
+        Scanner file = new Scanner(new File("e.dat".toLowerCase()));
         int n = file.nextInt(); file.nextLine();
         while(n-->0)
         {
