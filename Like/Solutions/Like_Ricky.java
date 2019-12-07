@@ -12,7 +12,7 @@ public class Like_Ricky
 {
 	public void run() throws Exception
 	{
-		Scanner file = new Scanner(new File("Like.dat"));
+		Scanner file = new Scanner(new File("like.dat"));
 		
 			//read in the number at the top of the data file
 		int times = file.nextInt(); 
