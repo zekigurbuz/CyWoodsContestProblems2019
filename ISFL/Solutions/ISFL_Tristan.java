@@ -3,9 +3,9 @@ import java.util.*;
 import java.io.*;
 
 // Done
-public class Recruits_Tristan {
+public class ISFL_Tristan {
 	public void run() throws Exception {
-		Scanner file = new Scanner(new File("recruits.dat"));
+		Scanner file = new Scanner(new File("isfl.dat"));
 		int times = file.nextInt();
 		file.nextLine();
 		while (times-- > 0) {
@@ -42,14 +42,13 @@ public class Recruits_Tristan {
 				ArrayList<String> ka = teams.get(s);
 				Collections.sort(ka);
 				for(String a : ka) System.out.println(a);
-				System.out.println();
+				if(!s.equals(teams.lastKey())) System.out.println();
 			}
 			System.out.println("-----");
-			System.out.println();
 		}
 	}
 
 	public static void main(String[] args) throws Exception {
-		new Recruits_Tristan().run();
+		new ISFL_Tristan().run();
 	}
 }
