@@ -42,10 +42,9 @@ public class Recruits_Tristan {
 				ArrayList<String> ka = teams.get(s);
 				Collections.sort(ka);
 				for(String a : ka) System.out.println(a);
-				System.out.println();
+				if(!s.equals(teams.lastKey())) System.out.println();
 			}
 			System.out.println("-----");
-			System.out.println();
 		}
 	}
 
