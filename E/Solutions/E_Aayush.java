@@ -3,7 +3,7 @@ import java.io.*;
 
 public class E_Aayush {
 	public void run() throws Exception {
-		Scanner file = new Scanner(new File("simulator.dat"));
+		Scanner file = new Scanner(new File("e.dat"));
 		int times = file.nextInt(); file.nextLine();
 		for (int asdf = 0; asdf < times; asdf++) {
 			double t1 = file.nextDouble();
