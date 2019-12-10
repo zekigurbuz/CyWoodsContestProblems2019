@@ -3,9 +3,9 @@ import java.util.*;
 import java.io.*;
 
 // Done
-public class Recruits_Tristan {
+public class ISFL_Tristan {
 	public void run() throws Exception {
-		Scanner file = new Scanner(new File("recruits.dat"));
+		Scanner file = new Scanner(new File("isfl.dat"));
 		int times = file.nextInt();
 		file.nextLine();
 		while (times-- > 0) {
@@ -49,6 +49,6 @@ public class Recruits_Tristan {
 	}
 
 	public static void main(String[] args) throws Exception {
-		new Recruits_Tristan().run();
+		new ISFL_Tristan().run();
 	}
 }

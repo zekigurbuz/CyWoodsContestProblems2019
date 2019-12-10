@@ -1,9 +1,9 @@
 import java.util.*;
 import java.io.*;
 // Done
-public class Recruits_Alex { 
+public class ISFL_Alex { 
 	public void run() throws Exception {
-		Scanner file = new Scanner(new File("recruits.dat"));
+		Scanner file = new Scanner(new File("isfl.dat"));
 		int times = file.nextInt();
 		file.nextLine();
 		for (int asdf = 0; asdf < times; asdf++) {
@@ -68,6 +68,6 @@ public class Recruits_Alex {
 		}
 	}
 	public static void main(String[] args) throws Exception {
-		new Recruits_Alex().run();
+		new ISFL_Alex().run();
 	}
 }
