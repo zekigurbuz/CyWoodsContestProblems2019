@@ -11,7 +11,8 @@ public class E_Aayush {
 			double t3 = file.nextDouble();
 			double p = file.nextDouble();
 			double ans = Math.abs(((t1+t2+t3)/3 - p)/p) * 100;
-			System.out.printf("%.2f%%%n",ans);
+			System.out.printf("%.2f%%",ans);
+			if (file.hasNext()) System.out.println();;
 		}
 
 	}
