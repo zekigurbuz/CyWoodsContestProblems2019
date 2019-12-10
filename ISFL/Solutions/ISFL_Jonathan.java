@@ -73,20 +73,26 @@ public class ISFL_Jonathan
 					teams.put("Untitled Team " + team, ok);
 				}
 			}
-			for(String key:teams.keySet())
+			ArrayList<String> Alex = new ArrayList<String>();
+			for(String b: teams.keySet())
+				Alex.add(b);
+			for(int x =0; x <Alex.size();x++)
 			{
-				ArrayList<String> ok = teams.get(key);
+				
+				ArrayList<String> ok = teams.get(Alex.get(x));
 				Collections.sort(ok);
-				System.out.println(key);
+				System.out.println(Alex.get(x));
 				for(int i = 0; i < ok.size();i++)
 				{
 					System.out.println(ok.get(i));
 				}
-				System.out.println();
+				if((x < Alex.size() -1))
+					System.out.println();
 			}
 			System.out.println("-----");
-			System.out.println();
+			//System.out.println();
 			teams = new TreeMap<String,ArrayList<String>>();
+			Alex = new ArrayList<String>();
 		}
 	}
 
