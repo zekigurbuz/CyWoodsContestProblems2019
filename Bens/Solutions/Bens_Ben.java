@@ -30,7 +30,7 @@ public class Bens_Ben
 				int c = file.nextInt() - file.nextInt();
 				double dd = file.nextDouble(); 
 				Ben b = new Ben(name, d, c, dd);
-				file.nextLine();
+				if (file.hasNext()) file.nextLine();
 				bb.add(b);
 			}
 			String ss = "";

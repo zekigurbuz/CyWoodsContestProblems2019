@@ -18,7 +18,7 @@ public class Ocho_Michael
 		map.put("UNO", 1);
 		map.put("DOS", 2);
 		map.put("TRES", 3);
-		map.put("CUARTRO", 4);
+		map.put("CUATRO", 4);
 		map.put("CINCO", 5);
 		map.put("SEIS", 6);
 		map.put("SIETE", 7);
