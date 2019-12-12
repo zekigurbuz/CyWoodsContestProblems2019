@@ -8,7 +8,7 @@ public class Unity_Ashay {
 		file.nextLine();
 		boolean b= true;
 		for (int asdf = 0; asdf < times; asdf++) {
-			String a = file.next();
+			String a = file.nextLine();
 			if (a.equals("Maxwell: Regarding the Unity update...")) {
 				b = false;
 				break;
