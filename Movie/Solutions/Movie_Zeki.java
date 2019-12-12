@@ -7,22 +7,29 @@ import static java.lang.Integer.*;
 import static java.lang.Double.*;
 import java.lang.Math.*;
 
-public class Twelve_Zeki {
+public class Movie_Zeki {
 	/** GLOBAL VARIABLES **/
 	long times = -1;
 
 	/** MAIN CODE **/
 	public void run() throws Exception {
-		Scanner file = new Scanner(new File("twelve.dat".toLowerCase()));
-		times = Long.parseLong(file.nextLine().trim());
-		for (long asdf = 1; asdf <= times; asdf++) {
-			System.out.printf("The next gift is %s.%n", file.nextLine());
-		}
-		file.close();
+		System.out.println("       *\n" + 
+				"      /|\\\n" + 
+				"     // \\\\\n" + 
+				"    //   \\\\\n" + 
+				"   //  o  \\\\\n" + 
+				"  //     o \\\\\n" + 
+				" //  o      \\\\\n" + 
+				"//___________\\\\\n" + 
+				"      |||\n" + 
+				"      |||\n" + 
+				"      |||\n" + 
+				"      |||\n" + 
+				"      ---");
 	}
 
 	/** EXTRAS **/
 	public static void main(String[] cows) throws Exception {
-		new Twelve_Zeki().run();
+		new Movie_Zeki().run();
 	}
 }
