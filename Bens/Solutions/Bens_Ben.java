@@ -27,7 +27,9 @@ public class Bens_Ben
 			for(int i = 0; i < bens; i++) {
 				String name = file.next() + " " + file.next();
 				double d = file.nextDouble();
-				int c = file.nextInt() - file.nextInt();
+				int q = file.nextInt();
+				int qq = file.nextInt();
+				int c = qq - q;
 				double dd = file.nextDouble(); 
 				Ben b = new Ben(name, d, c, dd);
 				if (file.hasNext()) file.nextLine();
