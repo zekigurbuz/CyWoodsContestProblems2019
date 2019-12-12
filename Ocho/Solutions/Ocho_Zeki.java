@@ -20,7 +20,7 @@ public class Ocho_Zeki {
 			add("UNO");
 			add("DOS");
 			add("TRES");
-			add("QUATRO");
+			add("CUATRO");
 			add("CINCO");
 			add("SEIS");
 			add("SIETE");
