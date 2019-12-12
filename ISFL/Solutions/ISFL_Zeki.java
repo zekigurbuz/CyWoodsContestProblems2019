@@ -18,14 +18,14 @@ public class ISFL_Zeki {
 		for (long asdf = 1; asdf <= times; asdf++) {
 			int n = Integer.parseInt(file.nextLine());
 			int unt = 0;
-			TreeMap<String, TreeSet<String>> teams = new TreeMap<>();
+			TreeMap<String, ArrayList<String>> teams = new TreeMap<>();
 			for (int i = 0; i < n; i++) {
 				String s = file.nextLine();
 				if (s.contains("-")) {
 					String a = s.substring(0, s.indexOf("-"));
 					String b = s.substring(s.indexOf("-") + 1);
 					if (!teams.containsKey(b)) {
-						teams.put(b, new TreeSet<String>());
+						teams.put(b, new ArrayList<String>());
 						teams.get(b).add(a);
 					}
 					else {
@@ -34,7 +34,7 @@ public class ISFL_Zeki {
 								unt++;
 							}
 							if (!teams.containsKey("Untitled Team " + unt)) {
-								teams.put("Untitled Team " + unt, new TreeSet<String>());
+								teams.put("Untitled Team " + unt, new ArrayList<String>());
 							}
 							teams.get("Untitled Team " + unt).add(a);
 						}
@@ -48,13 +48,14 @@ public class ISFL_Zeki {
 						unt++;
 					}
 					if (!teams.containsKey("Untitled Team " + unt)) {
-						teams.put("Untitled Team " + unt, new TreeSet<String>());
+						teams.put("Untitled Team " + unt, new ArrayList<String>());
 					}
 					teams.get("Untitled Team " + unt).add(s);
 				}
 			}
 			for (String s : teams.keySet()) {
 				System.out.println(s);
+				Collections.sort(teams.get(s));
 				for (String q : teams.get(s)) {
 					System.out.println(q);
 				}
