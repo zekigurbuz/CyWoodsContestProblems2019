@@ -39,7 +39,7 @@ public class Bodies_Zeki {
 					if (mat[i][j] == 'P') {
 						for (int x = -1; x <= 1; x++) {
 							for (int y = -1; y <= 1; y++) {
-								if (ib(x+i,j+y)) mat[i+x][j+y] = '#';
+								if (ib(x+i,j+y) && mat[i+x][j+y] != 'P') mat[i+x][j+y] = '#';
 							}
 						}
 					}
@@ -53,7 +53,7 @@ public class Bodies_Zeki {
 				int x = q.poll();
 				int y = q.poll();
 				int s = q.poll();
-				if (!ib(x, y) || shad[x][y] <= s || mat[x][y] == '#') continue;
+				if (!ib(x, y) || shad[x][y] <= s || mat[x][y] == '#' || mat[x][y] == 'P') continue;
 				shad[x][y] = s;
 				q.add(x + 1);
 				q.add(y);
