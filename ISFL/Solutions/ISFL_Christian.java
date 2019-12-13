@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.Map.Entry;
 import java.io.*;
 
 public class ISFL_Christian
@@ -54,16 +55,19 @@ public class ISFL_Christian
 					team.put("Untitled Team " + c,new ArrayList<>(Arrays.asList(name)));	
 					}
 				}
-			
-			 team.entrySet().forEach(entry->{
-				ArrayList<String> names = entry.getValue();
-				String nameso = "\n";
-				for(String name:names) nameso += name + "\n";
-				    System.out.println(entry.getKey()  +nameso);});	
-			 System.out.println("-----");
-			 System.out.println();
-		}
+			String out = "";
+			for (Entry<String, ArrayList<String>> entry: team.entrySet()) {
+				out += entry.getKey()+"\n";
+				for (String name: entry.getValue()) {
+					out += name+"\n";
+				}
+				out += "\n";
 			}
+			System.out.println(out.replaceFirst("\\s+$", ""));
+			System.out.println("-----");
+		}
+	}
+		
 	
 	public static void main(String[] args) throws Exception
 	{
